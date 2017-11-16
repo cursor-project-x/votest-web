@@ -12,3 +12,4 @@
 
 - John John john@john.com
 - Alex Alex alex@alex.com
+- Volodya Medvid volodya@medvid.com
