@@ -1,4 +1,4 @@
 const one = () => {
-    console.log('os');
-  };
-  one();
+  console.log('os');
+};
+one();

@@ -1,0 +1,64 @@
+{
+  "name": "votest-web",
+  "version": "1.0.0",
+  "description": "Vote app (web) structure",
+  "main": "index.js",
+  "scripts": {
+    "sasslint": "gulp sass:lint",
+    "jslint": "gulp js:lint",
+    "puglint": "gulp pug:lint",
+    "build": "NODE_ENV=production gulp",
+    "build:dev": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cursor-project-x/votest-web.git"
+  },
+  "keywords": [],
+  "author": "Roman Markhevka",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.4.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^4.0.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-noop": "^1.0.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-pug-linter": "^0.5.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-lint": "^1.3.4",
+    "gulp-sequence": "^0.4.6",
+    "gulp-uglyfly": "^1.4.2",
+    "gulp-watch": "^4.3.11",
+    "gulp-webserver": "^0.9.1",
+    "pre-commit": "^1.2.2",
+    "win-node-env": "^0.1.0"
+  },
+  "pre-commit": {
+    "run": [
+      "sasslint",
+      "jslint",
+      "puglint"
+    ],
+    "silent": true
+  },
+  "bugs": {
+    "url": "https://github.com/cursor-project-x/votest-web/issues"
+  },
+  "homepage": "https://github.com/cursor-project-x/votest-web#readme"
+}
