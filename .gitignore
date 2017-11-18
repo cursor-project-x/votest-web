@@ -1,5 +1,5 @@
 #On production. dir. **dest** comment if production
-[De]est/**/*
+#[De]est/**/*
 
 #On production. project files uncomment all if production 
 #[Ss]rc/
