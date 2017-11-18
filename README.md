@@ -1,6 +1,9 @@
 # Votest App (Web)
+
 ### Structure
+
 [doc structure sass](https://sass-guidelin.es/ru/#section-44);
+
 + **dest**
 + **src**
   + **images/**(just now => without sprites task)
