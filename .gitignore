@@ -1,0 +1,25 @@
+#On production. dir. **dest** comment if production
+#[De]est/**/*
+
+#On production. project files uncomment all if production 
+#[Ss]rc/
+#.eslintrc.js
+#gulpfile.js
+#package-lock.json
+#package.json
+
+######################
+node_modules
+trash
+Error.log
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+[Tt]humbs.db
+.sass-cache
+.tmp
+.rvmrc
+.trashes
+*~
