@@ -1,0 +1,1 @@
+"use strict";var one=function(){console.log("oss")};one();

@@ -6,7 +6,6 @@
   "scripts": {
     "sasslint": "gulp sass:lint",
     "jslint": "gulp js:lint",
-    "puglint": "gulp pug:lint",
     "build": "NODE_ENV=production gulp",
     "build:dev": "gulp"
   },
@@ -37,8 +36,6 @@
     "gulp-eslint": "^4.0.0",
     "gulp-htmlmin": "^3.0.0",
     "gulp-noop": "^1.0.0",
-    "gulp-pug": "^3.3.0",
-    "gulp-pug-linter": "^0.5.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-sass-lint": "^1.3.4",
@@ -52,8 +49,7 @@
   "pre-commit": {
     "run": [
       "sasslint",
-      "jslint",
-      "puglint"
+      "jslint"
     ],
     "silent": true
   },

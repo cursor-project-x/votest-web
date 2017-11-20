@@ -27,10 +27,6 @@
 + **dest**
 + **src**
   + **images/**(just now => without sprites task)
-  + **pug/**
-    + **layout/**                            # include some sections like sass (header, footer, main, ...);
-      - header.pug;
-    + **index.pug**                          # root file for compile;
   + **sass/**
     + **base/**
       + _base.scss(test styles)              # base styles;  
@@ -85,11 +81,6 @@
 + [Documentation gulp-eslint](https://www.npmjs.com/package/gulp-eslint);
 + [Rules](https://eslint.org/docs/rules/)
 
-> **PUG: gulp-pug-linter**
-
-+ **rules**: without custom rules, just now;
-+ [Documentstion](https://www.npmjs.com/search?q=+gulp-pug-linter);
-
 ### All modules:
 
 + **Js, Babel**:
@@ -99,9 +90,6 @@
   - gulp-eslint => include config submodules;
   - gulp-uglyfly;
   - gulp-concat;
-+ **PUG**:
-  - gulp-pug;
-  - gulp-pug-linter;
 + **Sass**:
   - gulp-sass;
   - gulp-sass-lint;
