@@ -1,24 +1,23 @@
 'use strict';
-var gulp = require('gulp');
-var clean = require('gulp-clean');
-var htmlmin = require('gulp-htmlmin');
-var noop = require('gulp-noop');
-var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-// var pug= require('gulp-pug');
-// var pugLinter = require('gulp-pug-linter');
-var gulpSequence = require('gulp-sequence');
-var eslint = require('gulp-eslint');
-var sassLint = require('gulp-sass-lint');
-var webserver = require('gulp-webserver');
-var babel = require('gulp-babel');
-var concat = require('gulp-concat');
-var uglyfly = require('gulp-uglyfly');
-var rename = require('gulp-rename');
+
+const gulp = require('gulp');
+const clean = require('gulp-clean');
+const htmlmin = require('gulp-htmlmin');
+const noop = require('gulp-noop');
+const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const gulpSequence = require('gulp-sequence');
+const eslint = require('gulp-eslint');
+const sassLint = require('gulp-sass-lint');
+const webserver = require('gulp-webserver');
+const babel = require('gulp-babel');
+const concat = require('gulp-concat');
+const uglyfly = require('gulp-uglyfly');
+const rename = require('gulp-rename');
 
 // if production
 //
-var isProduction = process.env.NODE_ENV === 'production';
+const isProduction = process.env.NODE_ENV === 'production';
 
 // will clean dest directory on event => reload
 //
