@@ -1,7 +1,7 @@
 #On production. dir. **dest** comment if production
 #[De]est/**/*
 
-#On production. project files uncomment all if production 
+#On production. project files uncomment all if production
 #[Ss]rc/
 #.eslintrc.js
 #gulpfile.js
@@ -23,3 +23,5 @@ ehthumbs.db
 .rvmrc
 .trashes
 *~
+
+dest/
