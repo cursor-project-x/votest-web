@@ -1,0 +1,36 @@
+.menu {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  top: 75px;
+
+  &_desktop {
+    ul {
+      list-style: none;
+
+      &:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    }
+
+    li {
+      &:first-child {
+        margin-left: 0px;
+      }
+
+      float: left;
+      margin-left: 25px;
+
+      a {
+        display: block;
+        color: #fff;
+      }
+    }
+  }
+
+  &_mobile {
+    display: none;
+  }
+}

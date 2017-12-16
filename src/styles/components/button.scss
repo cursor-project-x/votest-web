@@ -1,0 +1,33 @@
+.button {
+  display: inline-block;
+  margin-bottom: 0;
+
+  font-weight: 400;
+  text-align: center;
+
+  vertical-align: middle;
+
+  touch-action: manipulation;
+  cursor: pointer;
+
+  background-image: none;
+  border: 1px solid transparent;
+
+  white-space: nowrap;
+  padding: 6px 12px;
+
+  user-select: none;
+
+  &-white {
+    color: #007fff;
+    background-color: #fff;
+    // background-image: linear-gradient(225deg, #fff 0%, #007fff 53%, #DB4070 100%);
+    border-color: #0072e6;
+  }
+
+  &-lg {
+    line-height: 1.33333;
+    padding: 15px 30px;
+    font-size: 1.5em;
+  }
+}

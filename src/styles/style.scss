@@ -1,3 +1,22 @@
 body {
-	background: blue;
+	min-width: 320px;
+  font: 16px/1.4 "Roboto", Helvetica, Arial, sans-serif;
+  color: #000;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+  position: relative;
+  width: 1240px;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  position: relative;
 }
