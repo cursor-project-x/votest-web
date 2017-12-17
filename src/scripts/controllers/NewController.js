@@ -3,5 +3,5 @@ angular.module('votestApp').controller('NewController', function() {
 
   vm.create = () => {
     alert(1);
-  }
+  };
 });

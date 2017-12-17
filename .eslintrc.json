@@ -1,0 +1,37 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "globals": {
+    "angular": 1
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "no-bitwise": ["off"],
+    "no-unused-expressions": ["off"],
+    "no-param-reassign": ["off"],
+    "arrow-body-style": ["off"],
+    "arrow-parens": ["off"],
+    "no-console": ["error", { "allow": ["info", "warn", "error"] }],
+    "no-multi-spaces": ["error"],
+    "no-var": ["off"],
+    "strict": ["off"],
+    "indent": [
+      "error",
+      2
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ]
+  }
+}

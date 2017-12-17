@@ -4,5 +4,5 @@ angular.module('votestApp').controller('HomeController', function() {
 
   vm.createPoll = () => {
     alert(1);
-  }
+  };
 });
