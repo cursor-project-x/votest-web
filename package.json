@@ -1,6 +1,6 @@
 {
   "name": "votest-web",
-  "version": "1.0.0",
+  "version": "0.0.8",
   "description": "Vote app (web) structure",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "editorconfig-checker": "^1.1.1",
     "eslint": "^4.13.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-standard": "^10.2.1",
@@ -42,14 +43,17 @@
     "gulp-uglyfly": "^1.4.2",
     "gulp-watch": "^4.3.11",
     "gulp-webserver": "^0.9.1",
-    "win-node-env": "^0.1.0",
-    "editorconfig-checker": "^1.1.1"
+    "win-node-env": "^0.1.0"
   },
   "bugs": {
     "url": "https://github.com/cursor-project-x/votest-web/issues"
   },
   "homepage": "https://github.com/cursor-project-x/votest-web#readme",
   "dependencies": {
-    "dotenv": "^4.0.0"
+    "dotenv": "^4.0.0",
+    "gulp-bump": "^2.9.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-version-append": "^0.2.0",
+    "plugins": "^0.4.2"
   }
 }

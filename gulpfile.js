@@ -1,17 +1,12 @@
 'use strict';
 require('dotenv').config();
 
+const debug = require('debug')('app-build');
 const gulp = require('gulp');
-const clean = require('gulp-clean');
-const htmlmin = require('gulp-htmlmin');
-const noop = require('gulp-noop');
-const sass = require('gulp-sass');
-const autoprefixer = require('gulp-autoprefixer');
-const gulpSequence = require('gulp-sequence');
-const webserver = require('gulp-webserver');
-const babel = require('gulp-babel');
-const concat = require('gulp-concat');
-const uglyfly = require('gulp-uglyfly');
+const gulpLoadPlugins = require('gulp-load-plugins');
+
+// preload all plugins
+const plugins = gulpLoadPlugins();
 
 // if production
 const isProduction = process.env.NODE_ENV !== 'development';
@@ -20,14 +15,25 @@ const isProduction = process.env.NODE_ENV !== 'development';
 gulp.task('clean', () => {
   return gulp
     .src('./dest/**/*', { read: false })
-    .pipe(clean())
+    .pipe(plugins.clean())
+});
+
+// up the version
+gulp.task('bump', function(){
+  return gulp
+    .src('./package.json')
+    .pipe(plugins.bump())
+    .pipe(gulp.dest('./'));
 });
 
 // will copy all html views
 gulp.task('views', () => {
+  delete require.cache[require.resolve('./package.json')]
+
   return gulp
     .src('./src/*.html')
-    .pipe(isProduction ? htmlmin({collapseWhitespace: true}) : noop())
+    .pipe(plugins.versionAppend(['html', 'js', 'css']))
+    .pipe(isProduction ? plugins.htmlmin({collapseWhitespace: true}) : plugins.noop())
     .pipe(gulp.dest('./dest/'))
 });
 
@@ -35,11 +41,11 @@ gulp.task('views', () => {
 gulp.task('scripts', () => {
   return gulp
     .src('./src/scripts/**/*.js')
-    .pipe(babel({
+    .pipe(plugins.babel({
       presets: ['env']
     }))
-    .pipe(concat('app.js'))
-    .pipe(uglyfly({
+    .pipe(plugins.concat('app.js'))
+    .pipe(plugins.uglyfly({
       output: { beautify: isProduction ? false : true }
     }))
     .pipe(gulp.dest('./dest/scripts'));
@@ -49,14 +55,14 @@ gulp.task('scripts', () => {
 gulp.task('styles', () => {
   return gulp
     .src('./src/styles/**/*.s+(a|c)ss')
-    .pipe(sass({
+    .pipe(plugins.sass({
       outputStyle: isProduction ? 'compressed' : 'expanded'
-    }).on('error', sass.logError))
-    .pipe(autoprefixer({
+    }).on('error', plugins.sass.logError))
+    .pipe(plugins.autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
     }))
-    .pipe(concat('app.css'))
+    .pipe(plugins.concat('app.css'))
     .pipe(gulp.dest('./dest/styles/'))
 });
 
@@ -71,7 +77,7 @@ gulp.task('images', () => {
 gulp.task('server', () => {
   return gulp
     .src('./dest')
-    .pipe(webserver({
+    .pipe(plugins.webserver({
       port: process.env.HTTP_PORT || 8080,
       livereload: isProduction ? false : true,
       directoryListing: false,
@@ -86,8 +92,8 @@ gulp.task('watch', () => {
 
 // build app
 gulp.task('build', done => {
-  return gulpSequence('clean', ['views', 'styles', 'scripts', 'images'])(done)
+  return plugins.sequence('clean', 'bump', ['views', 'styles', 'scripts', 'images'])(done)
 });
 
 // default task
-gulp.task('default', gulpSequence(['build'], ['server', 'watch']));
+gulp.task('default', plugins.sequence(['build'], ['server', 'watch']));
