@@ -1,5 +1,5 @@
-require('dotenv').config();
 'use strict';
+require('dotenv').config();
 
 const gulp = require('gulp');
 const clean = require('gulp-clean');
@@ -18,20 +18,23 @@ const isProduction = process.env.NODE_ENV !== 'development';
 
 // will clean dest directory on event => reload
 gulp.task('clean', () => {
-  return gulp.src('./dest/**/*', { read: false })
+  return gulp
+    .src('./dest/**/*', { read: false })
     .pipe(clean())
 });
 
 // will copy all html views
 gulp.task('views', () => {
-  gulp.src('./src/*.html')
+  return gulp
+    .src('./src/*.html')
     .pipe(isProduction ? htmlmin({collapseWhitespace: true}) : noop())
     .pipe(gulp.dest('./dest/'))
 });
 
 // will compile js-file and push to dir.es5
 gulp.task('scripts', () => {
-  return gulp.src('./src/scripts/**/*.js')
+  return gulp
+    .src('./src/scripts/**/*.js')
     .pipe(babel({
       presets: ['env']
     }))
@@ -44,7 +47,8 @@ gulp.task('scripts', () => {
 
 // will compile sass to css with autoprefixer call sass:lint;
 gulp.task('styles', () => {
-  return gulp.src('./src/styles/**/*.s+(a|c)ss')
+  return gulp
+    .src('./src/styles/**/*.s+(a|c)ss')
     .pipe(sass({
       outputStyle: isProduction ? 'compressed' : 'expanded'
     }).on('error', sass.logError))
@@ -58,13 +62,15 @@ gulp.task('styles', () => {
 
 // will copy images without opt. and sprites
 gulp.task('images', () => {
-  return gulp.src('./src/images/*.png')
+  return gulp
+    .src('./src/images/*.png')
     .pipe(gulp.dest('./dest/images/'))
 });
 
 // server
 gulp.task('server', () => {
-  return gulp.src('./dest')
+  return gulp
+    .src('./dest')
     .pipe(webserver({
       port: process.env.HTTP_PORT || 8080,
       livereload: isProduction ? false : true,
@@ -75,12 +81,12 @@ gulp.task('server', () => {
 
 // watch & reload server
 gulp.task('watch', () => {
-  gulp.watch('src/**/*', ['build']);
+  return gulp.watch('src/**/*', ['build']);
 });
 
 // build app
 gulp.task('build', done => {
-  gulpSequence('clean', ['views', 'styles', 'scripts', 'images'])(done)
+  return gulpSequence('clean', ['views', 'styles', 'scripts', 'images'])(done)
 });
 
 // default task

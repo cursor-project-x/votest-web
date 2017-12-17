@@ -4,12 +4,10 @@
   "description": "Vote app (web) structure",
   "main": "index.js",
   "scripts": {
-    "sasslint": "gulp sass:lint",
-    "jslint": "gulp js:lint",
-    "build": "NODE_ENV=production gulp",
-    "build:dev": "gulp",
     "lint:js": "eslint --config .eslintrc.json src/scripts/",
-    "test": "yarn run lint:js",
+    "lint:editorconfig": "editorconfig-checker src/",
+    "lint:sass": "editorconfig-checker src/",
+    "test": "yarn run lint:js && yarn run lint:editorconfig",
     "start:dev": "NODE_ENV=development DEBUG=app-* gulp",
     "start": "NODE_ENV=production gulp"
   },
@@ -44,7 +42,8 @@
     "gulp-uglyfly": "^1.4.2",
     "gulp-watch": "^4.3.11",
     "gulp-webserver": "^0.9.1",
-    "win-node-env": "^0.1.0"
+    "win-node-env": "^0.1.0",
+    "editorconfig-checker": "^1.1.1"
   },
   "bugs": {
     "url": "https://github.com/cursor-project-x/votest-web/issues"

@@ -1,9 +1,22 @@
 # Votest App (Web)
 
-## Todos
+## Setup on local
+
+- Node.js v8 via [nvm](https://github.com/creationix/nvm)
+  - `$ nvm use v8`
+- update `.env` (using `.env.sample` sample)
+- `yarn test`
+
+## Setup on production
+
+- `yarn test`
+
+## Todo(s)
 
 - fix problem with running app
 - APIService
+
+
 
 ## Before start project must have, check :
 
