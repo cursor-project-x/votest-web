@@ -1,10 +1,15 @@
-const app = angular.module('votestApp', []);
+angular.module('votestApp', ['ngRoute']);
 
-app.controller('pageController', ['$injector', function($injector) {
-  var vm = this;
-  vm.message = 'Hello world';
-
-  vm.createPoll = () => {
-    alert(1);
-  }
-}]);
+angular.module('votestApp')
+  .config(($routeProvider) => {
+    $routeProvider
+      .when('/', {
+        templateUrl: 'views/home.html',
+      })
+      .when('/new', {
+        templateUrl: 'views/new.html',
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+  });

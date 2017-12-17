@@ -13,43 +13,13 @@
   <title>Votest</title>
 </head>
 <body ng-app="votestApp">
-  <div class="wrapper" ng-controller="pageController as vm">
-    <header class="header">
-      <div class="container">
-        <div class="header_bg"></div>
-
-        <nav class="menu">
-          <div class="menu_desktop">
-            <ul>
-              <li><a href="javascript;" title="Why Votest?">Why Votest?</a></li>
-              <li><a href="javascript;" title="Votest Features">Features</a></li>
-              <li><a href="javascript;" title="Votest Downloads">Downloads</a></li>
-            </ul>
-          </div>
-          <div class="menu_mobile">mobile-menu</div>
-        </nav>
-
-        <div class="header_content">
-          <div class="text text-slogan">The most effective way to gather actionable feedback from your customers.</div>
-
-          <div class="text text-description">Join Votest – simple AI-powered business<br> messenger to make your team super productive.<br> Unlimited message history. <strong>Free…Forever.</strong></div>
-
-          <button class="button button-white button-lg" ng-click="vm.createPoll()">Create Poll!</button>
-        </div>
-
-        <div class="header_images">
-          <div class="screen screen-iphone">
-            <div class="screen_content">
-              <img src="http://piggypot.com/img/app-screens/my-pots-screen-50ecfa37.jpg">
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
+  <div class="container">
+    <ng-view></ng-view>
   </div>
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-aria.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
 
   <script type="text/javascript" src="scripts/app.js"></script>
 </body>

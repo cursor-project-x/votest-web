@@ -1,5 +1,10 @@
 # Votest App (Web)
 
+## Todos
+
+- fix problem with running app
+- APIService
+
 ## Before start project must have, check :
 
 ### Node.js
